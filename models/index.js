@@ -15,7 +15,7 @@ Category.hasMany(Product, {
     onDelete: 'SET NULL'
 });
 
-Product.belongsToMany(Category, {
+Product.belongsTo(Category, {
     foreignKey: 'product_id'
 });
 
