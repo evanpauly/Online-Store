@@ -24,14 +24,6 @@ router.get('/', (req, res) => {
             model: Post,
             attributes: ['id']
         },
-        {
-            model: Comment,
-            attributes: ['id'],
-            include: {
-            model: Post,
-            attributes: ['title']
-            }
-        },
         ]
     })
         .then(dbUserData => {
