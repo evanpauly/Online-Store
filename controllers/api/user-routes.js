@@ -20,12 +20,15 @@ router.get('/:id', (req, res) => {
         where: {
         id: req.params.id
         },
+<<<<<<< HEAD
         include: [
         {
             model: Post,
             attributes: ['id']
         },
         ]
+=======
+>>>>>>> main
     })
         .then(dbUserData => {
         if (!dbUserData) {
@@ -62,7 +65,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// 
+// Login from a previous session
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -89,8 +92,9 @@ router.post('/login', (req, res) => {
         res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
     });
-    });
-    
+});
+
+// Logout from a session
     router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
@@ -100,9 +104,10 @@ router.post('/login', (req, res) => {
     else {
         res.status(404).end();
     }
-    });
-    
-    router.put('/:id', (req, res) => {
+});
+
+// Update a login
+router.put('/:id', (req, res) => {
     
     User.update(req.body, {
         individualHooks: true,
@@ -121,8 +126,9 @@ router.post('/login', (req, res) => {
         console.log(err);
         res.status(500).json(err);
         });
-    });
-    
+});
+
+// Delete an account
     router.delete('/:id', (req, res) => {
     User.destroy({
         where: {
