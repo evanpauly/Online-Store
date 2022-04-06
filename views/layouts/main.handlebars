@@ -12,16 +12,25 @@
 </head>
 <body>
   <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="./homepage.html" class="brand-logo"><i class="material-icons">business</i></a>
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><i class="material-icons">business</i></a>
+    {{#if loggedIn}}
       <ul class="right hide-on-med-and-down">
-        <li><a href="./cart.html"><i class="material-icons">add_shopping_cart</i></a></li>
+        <li><a href="/dashboard"><i class="material-icons">account_balance</i></a></li>
       </ul>
+      <a class="waves-effect waves-light btn logout">logout</a>
+      {{else}}
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/login"><i class="material-icons">transfer_within_a_station</i></a></li>
+      </ul>
+      {{/if}}
+
 
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#"><i class="large material-icons">business</i></a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
+    
   </nav>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
@@ -31,7 +40,7 @@
         <h5 class="header col s12 light">An online space to create your own ecommerce business</h5>
       </div>
       <div class="row center">
-        <a href="./login.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+        <a href="/login" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
       </div>
       <br><br>
 
@@ -46,7 +55,7 @@
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><a href='./shop.html'><i class="material-icons">store</i></a></h2>
+            <h2 class="center light-blue-text"><a href='#'><i class="material-icons">store</i></a></h2>
             <h5 class="center">Buy and Sell</h5>
 
             <p class="light">We created this online space for you! Create an account to start your own ecommerce business that will allow you to post ads for anything that you would like to sell, straight from the comfort of your own home. Or browse all available items for sale!</p>
@@ -55,7 +64,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><a href='./user.html'><i class="material-icons">group</i></a></h2>
+            <h2 class="center light-blue-text"><a href='#'><i class="material-icons">group</i></a></h2>
             <h5 class="center">My Account</h5>
 
             <p class="light">Sign in, or create an account now to start your next online business adventure or to start buying available items.</p>

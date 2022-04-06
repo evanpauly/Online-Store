@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Category, Product, User } = require('../models');
+const { User, Product, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
@@ -13,14 +13,16 @@ router.get('/', withAuth, (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
-      'title',
-      'created_at',
+      'product_url',
+      'product_name',
+      'price',
+      'stock',
+      'category_id'
     ],
     include: [
       {
-        model: Product,
-        attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
+        model: Category,
+        attributes: ['id', 'category_name'],
         include: {
           model: User,
           attributes: ['username']
@@ -33,8 +35,8 @@ router.get('/', withAuth, (req, res) => {
     ]
   })
     .then(dbProductData => {
-      const product = dbProductData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { product, loggedIn: true });
+      const posts = dbProductData.map(product => product.get({ plain: true }));
+      res.render('dashboard', { products, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -43,18 +45,19 @@ router.get('/', withAuth, (req, res) => {
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
-  Post.findByPk(req.params.id, {
+  Product.findByPk(req.params.id, {
     attributes: [
       'id',
-      'post_url',
-      'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      'product_url',
+      'product_name',
+      'price',
+      'stock',
+      'category_id'
     ],
     include: [
       {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        model: Category,
+        attributes: ['id', 'category_name'],
         include: {
           model: User,
           attributes: ['username']
@@ -66,11 +69,11 @@ router.get('/edit/:id', withAuth, (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      if (dbPostData) {
-        const post = dbPostData.get({ plain: true });
+    .then(dbProductData => {
+      if (dbProductData) {
+        const post = dbProductData.get({ plain: true });
         
-        res.render('edit-post', {
+        res.render('edit-Product', {
           post,
           loggedIn: true
         });

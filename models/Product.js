@@ -36,7 +36,14 @@ Product.init(
                 model: 'category',
                 key: 'id'
             }
-        }
+        },
+        product_url: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+              isURL: true
+            }
+          },
     },
     {
         sequelize,

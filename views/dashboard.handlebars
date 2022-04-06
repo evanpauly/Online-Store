@@ -1,0 +1,31 @@
+<section>
+  <h2>Add New Product</h2>
+
+  <form class="new-product-form">
+    <div>
+      <label for="post-title">Product</label>
+      <input type="text" id="product-title" name="product-title" />
+    </div>
+    <div>
+      <label for="product-url">Link</label>
+      <input id="product-url" name="product-url" />
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
+
+{{#if product.length}}
+<section>
+  <h2>Your product</h2>
+  <ol>
+    {{#each products as |product|}}
+    <li>
+      {{> product-info product}}
+      <a href="/dashboard/edit/{{product.id}}" class="edit-link">Edit product</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-product.js"></script>
