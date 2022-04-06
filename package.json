@@ -26,9 +26,7 @@
     "express-session": "^1.17.2",
     "materialize-css": "^1.0.0-rc.2",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.18.0"
-  },
-  "dependencies": {
+    "sequelize": "^6.18.0",
     "dotenv": "^16.0.0"
-  }
+}
 }
