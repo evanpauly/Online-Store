@@ -19,5 +19,17 @@ Product.belongsTo(Category, {
     foreignKey: 'product_id'
 });
 
+
+// Category.belongsToMany(User, {
+//     through: Product,
+//     foreignKey: 'user_id'
+// });
+
+
+// User.belongsToMany(Category, {
+//     through: Product,
+//     foreignKey: 'category_id'
+// });
+
 module.exports = {Category, Product, User};
 
