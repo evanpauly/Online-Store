@@ -30,6 +30,10 @@ Product.init(
                 isNumeric: true
             }
         },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         category_id: {
             type: DataTypes.INTEGER,
             references: {
