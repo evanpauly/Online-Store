@@ -2,16 +2,20 @@ const {Category} = require('../models/');
 
 const categories = [
     {
-        category_name: 'Bass'
+        id: 1,
+        category_name: 'Bass',
     },
     {
-        category_name: 'Guitar'
+        id: 2,
+        category_name: 'Guitar',
     },
     {
-        category_name: 'Piano'
+        id: 3,
+        category_name: 'Piano',
     },
     {
-        category_name: 'Drums'
+        id: 4,
+        category_name: 'Drums',
     },
 ];
 
