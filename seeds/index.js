@@ -6,12 +6,12 @@ const sequelize = require('../config/connection');
 const seedAll = async () => {
     await sequelize.sync({ force: true });
     console.log('\n---- DATABASE SYNCED ---- \n');
-    await seedCategories();
+    seedCategories();
     console.log('\n---- CATEGORIES ADDED --- \n');
-    await seedProducts();
+    seedProducts();
     console.log('\n---- PRODUCTS ADDED --- \n');
 
-    process.exit(0);
+    // process.exit(0);
 };
 
 seedAll();
