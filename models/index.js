@@ -7,7 +7,8 @@ User.hasMany(Product, {
 });
 
 Product.belongsTo(User, {
-    foreignKey: 'product_id'
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
 });
 
 Category.hasMany(Product, {
@@ -16,8 +17,7 @@ Category.hasMany(Product, {
 });
 
 Product.belongsTo(Category, {
-    foreignKey: 'product_id'
+    foreignKey: 'category_id'
 });
 
 module.exports = {Category, Product, User};
-
