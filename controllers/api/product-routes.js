@@ -5,10 +5,6 @@ const { Category, Product } = require('../../models');
 
 // find all categories
 router.get('/', (req, res) => {
-<<<<<<< HEAD
-  // find all categories
-=======
->>>>>>> main
 Product.findAll({
     include: [
     {
@@ -25,10 +21,6 @@ Product.findAll({
 
 // find one Product by its `id` value
 router.get('/:id', (req, res) => {
-<<<<<<< HEAD
-  // find one category by its `id` value
-=======
->>>>>>> main
 Product.findOne({
     where: { id: req.params.id },
     include: [
@@ -62,10 +54,6 @@ Product.create(req.body)
 
 // update a Product by its `id` value
 router.put('/:id', (req, res) => {
-<<<<<<< HEAD
-  // update a category by its `id` value
-=======
->>>>>>> main
 Product.update(req.body, {
     where: {id: req.params.id}
 })
@@ -84,10 +72,6 @@ Product.update(req.body, {
 
 // delete a Product by its `id` value
 router.delete('/:id', (req, res) => {
-<<<<<<< HEAD
-  // delete a category by its `id` value
-=======
->>>>>>> main
 Product.destroy({
     where: {
     id: req.params.id
