@@ -20,9 +20,6 @@ Product.belongsTo(Category, {
     foreignKey: 'category_id'
 });
 
-<<<<<<< HEAD
-module.exports = {Category, Product, User};
-=======
 
 // Category.belongsToMany(User, {
 //     through: Product,
@@ -37,4 +34,3 @@ module.exports = {Category, Product, User};
 
 module.exports = {Category, Product, User};
 
->>>>>>> main
