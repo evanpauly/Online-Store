@@ -12,18 +12,25 @@
 </head>
 <body>
   <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><i class="material-icons">business</i></a>
-    {{#if loggedIn}}
+    {{!-- <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><i class="material-icons">business</i></a> --}}
+    {{!-- {{#if loggedIn}}
       <ul class="right hide-on-med-and-down">
-        <li><a href="/dashboard"><i class="material-icons">account_balance</i></a></li>
+        <li><a href="/homepage"><i class="material-icons">account_balance</i></a></li>
       </ul>
-      <a class="waves-effect waves-light btn logout">logout</a>
+      <button id="logout" class="btn-no-style">logout</button>
       {{else}}
       <ul class="right hide-on-med-and-down">
         <li><a href="/login"><i class="material-icons">transfer_within_a_station</i></a></li>
       </ul>
-      {{/if}}
-
+      {{/if}} --}}
+   <nav>
+        {{#if loggedIn}}
+        <a href="/dashboard">dashboard</a>
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
 
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#"><i class="large material-icons">business</i></a></li>
@@ -32,61 +39,10 @@
     </div>
     
   </nav>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Open your online store now!</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">An online space to create your own ecommerce business</h5>
-      </div>
-      <div class="row center">
-        <a href="/login" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div>
-      <br><br>
-
-    </div>
-  </div>
-
-
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><a href='#'><i class="material-icons">store</i></a></h2>
-            <h5 class="center">Buy and Sell</h5>
-
-            <p class="light">We created this online space for you! Create an account to start your own ecommerce business that will allow you to post ads for anything that you would like to sell, straight from the comfort of your own home. Or browse all available items for sale!</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><a href='#'><i class="material-icons">group</i></a></h2>
-            <h5 class="center">My Account</h5>
-
-            <p class="light">Sign in, or create an account now to start your next online business adventure or to start buying available items.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">all_inclusive</i></h2>
-            <h5 class="center">No limitations!</h5>
-
-            <p class="light">Starting your own online business has been made easy by us! Sign up now and start selling anything at any time you want!</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <br><br>
-  </div>
-  <main>
+  
+  {{!-- <main>
     {{{ body }}}
-  </main>
+  </main> --}}
 
   <footer class="page-footer orange">
     <div class="container">
@@ -123,11 +79,15 @@
     </div>
   </footer>
 
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="/js/materialize.min.js"></script>
   <script src="/js/init.js"></script>
-
+  <script src="/js/login.js"></script>
+  
   </body>
 </html>
