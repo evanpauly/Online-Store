@@ -1,8 +1,12 @@
+<nav>
+    <a href="/products/add-product"><button type="submit" class="btn">Add Product</button></a>
+</nav>
+
 <div id="product-template">
     <div id="product-container">
     {{#each products}}
     <div class="product-img">
-        <img src="{{ image }}">
+        {{{ image }}}
     </div>
 
     <div class="info-column">
@@ -13,4 +17,6 @@
     {{/each}}
 </div>
 </div>
+
+<script src="../public/js/add-product.js"></script>
 <script src="../public/js/display-products.js"></script>

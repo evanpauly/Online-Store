@@ -7,7 +7,7 @@ const products = [
         price: 2999.99,
         stock: 5,
         category_id: 1,
-        image: cloudinary.image("Gibson_Thunderbird_nkqdfe.jpg")
+        image: cloudinary.image("Gibson_Thunderbird_nkqdfe.jpg",)
     },
     {
         product_name: 'Ibanez Premium',

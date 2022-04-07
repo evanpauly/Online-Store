@@ -23,6 +23,7 @@ const sess = {
 app.use(session(sess));
 
 const helpers = require('./utils/helpers');
+const { clearCookie } = require('express/lib/response');
 const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);

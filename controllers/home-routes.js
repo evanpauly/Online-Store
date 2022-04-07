@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const res = require('express/lib/response');
 const sequelize = require('../config/connection');
 const { Product, User, Category } = require('../models');
 
@@ -7,8 +8,8 @@ const { Product, User, Category } = require('../models');
 
 
 
-// get all products for homepage
-router.get('/', (req, res) => {
+// get all products for dashboard
+router.get('/products', (req, res) => {
   console.log('======================');
   Product.findAll({
     attributes: [
@@ -28,7 +29,7 @@ router.get('/', (req, res) => {
     .then(dbProductData => {
       const products = dbProductData.map(product => product.get({ plain: true }));
 
-      res.render('homepage', {
+      res.render('product-list', {
         products,
         loggedIn: req.session.loggedIn
       });
@@ -94,7 +95,12 @@ router.get('/', (req, res) => {
 
 
 
-
+router.get('/products/add-product', (req, res) => {
+  if(req.session.loggedIn) {
+    res.render('dashboard');
+  }
+});
+  
 
 router.get('/', (req, res) => {
   res.render('homepage');

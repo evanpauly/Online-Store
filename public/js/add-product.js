@@ -1,14 +1,17 @@
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="product-title"]').value;
-    const post_url = document.querySelector('input[name="product-url"]').value;
+    const product_name = document.querySelector('input[name="product-name"]').value;
+    const price = document.querySelector('input[name="price"]').value;
+    const stock = document.querySelector('input[name="stock"]').value;
+    
   
     const response = await fetch(`/api/products`, {
       method: 'POST',
       body: JSON.stringify({
-        title,
-        post_url
+        product_name,
+        price,
+        stock
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -16,7 +19,7 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/store');
+      document.location.replace('/products');
     } else {
       alert(response.statusText);
     }

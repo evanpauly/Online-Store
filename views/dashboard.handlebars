@@ -4,17 +4,21 @@
   <form class="new-product-form">
     <div>
       <label for="post-title">Product</label>
-      <input type="text" id="product-title" name="product-title" />
+      <input type="text" id="product-name" name="product-name" />
     </div>
     <div>
-      <label for="product-url">Link</label>
-      <input id="product-url" name="product-url" />
+      <label for="price">Price</label>
+      <input id="price" name="price" />
     </div>
-    <button type="submit" class="btn">Create</button>
+    <div>
+      <label for="stock">Stock</label>
+      <input id="stock" name="stock" />
+    </div>
+    <button type="submit" class="btn">Add</button>
   </form>
 </section>
 
-{{#if product.length}}
+{{!-- {{#if product.length}}
 <section>
   <h2>Your product</h2>
   <ol>
@@ -26,6 +30,6 @@
     {{/each}}
   </ol>
 </section>
-{{/if}}
+{{/if}} --}}
 
 <script src="../public/js/add-product.js"></script>
