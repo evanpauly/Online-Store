@@ -63,4 +63,4 @@ async function seedProducts() {
    await Product.bulkCreate(products);
 };
 
-module.exports = seedProducts;
+module.exports = seedProducts, products;
