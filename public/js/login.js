@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/product-list/');
+        document.location.replace('/products/');
       } else {
         alert(response.statusText);
       }
@@ -41,7 +41,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/product-list/');
+        document.location.replace('/products/');
       } else {
         alert(response.statusText);
       }
