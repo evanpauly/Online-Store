@@ -23,14 +23,18 @@
         <li><a href="/login"><i class="material-icons">transfer_within_a_station</i></a></li>
       </ul>
       {{/if}} --}}
-   <nav>
+      <div>
         {{#if loggedIn}}
         <a href="/dashboard">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
-      </nav>
+     </div>
+       {{!-- <div>
+    <button id="logout" class="btn-no-style">logout</button>
+    <a href="/login">login</a>
+    </div> --}}
 
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#"><i class="large material-icons">business</i></a></li>
@@ -88,6 +92,7 @@
   <script src="/js/materialize.min.js"></script>
   <script src="/js/init.js"></script>
   <script src="/js/login.js"></script>
+  <script src="/js/logout.js"></script>
   
   </body>
 </html>
