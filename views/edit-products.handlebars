@@ -1,4 +1,4 @@
-<article>
+{{!-- <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
   <h2>
     Edit Post
@@ -9,12 +9,12 @@
       <span>({{format_url post.post_url}})</span>
     </div>
     <div>
-      {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
+      {{product.product_name}} added by you on {{format_date product.created_at}}
       |
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <a href="/post/{{product.id}}">{{product.product_name}}</a>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <button type="submit">Save product</button>
+    <button type="button" class="delete-post-btn">Delete product</button>
   </form>
 </article>
 
@@ -24,12 +24,12 @@
   </div>
 
   <div>
-    <button type="submit">add comment</button>
+    <button type="submit">add product</button>
   </div>
 </form>
 
-{{> comments post.comments}}
 
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>
+
+<script src="/js/edit-product.js"></script>
+<script src="/js/delete-product.js"></script>
+<script src="/js/add-product.js.js"></script> --}}
