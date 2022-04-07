@@ -35,7 +35,7 @@ router.get('/', withAuth, (req, res) => {
     ]
   })
     .then(dbProductData => {
-      const posts = dbProductData.map(product => product.get({ plain: true }));
+      const products = dbProductData.map(product => product.get({ plain: true }));
       res.render('dashboard', { products, loggedIn: true });
     })
     .catch(err => {
@@ -71,10 +71,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
   })
     .then(dbProductData => {
       if (dbProductData) {
-        const post = dbProductData.get({ plain: true });
+        const product = dbProductData.get({ plain: true });
         
         res.render('edit-Product', {
-          post,
+          product,
           loggedIn: true
         });
       } else {

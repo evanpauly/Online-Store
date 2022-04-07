@@ -4,8 +4,8 @@
     <span>({{format_url product_url}})</span>
   </div>
   <div class="meta">
-    {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
+    {{product_name}} {{price}} {{stock}} {{image}}
     |
-    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    <a href="/product/{{id}}">{{product_name}} {{price}} {{stock}} </a>
   </div>
 </article>

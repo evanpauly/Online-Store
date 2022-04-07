@@ -30,20 +30,24 @@ Product.init(
                 isNumeric: true
             }
         },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         category_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'category',
                 key: 'id'
             }
-        },
-        product_url: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-              isURL: true
-            }
-          },
+        }
+        // product_url: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        //     validate: {
+        //       isURL: true
+        //     }
+        //   },
     },
     {
         sequelize,
