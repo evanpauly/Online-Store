@@ -1,0 +1,16 @@
+<div id="product-template">
+    <div id="product-container">
+    {{#each products}}
+    <div class="product-img">
+        <img src="{{ image }}">
+    </div>
+
+    <div class="info-column">
+        <h2>{{product_name}} <span>{{category_id}}</span></h2>
+
+        <h3>Price: {{price}} / # in stock: {{stock}}</h3>
+    </div>
+    {{/each}}
+</div>
+</div>
+<script src="../public/js/display-products.js"></script>
