@@ -10,9 +10,8 @@
 
 ## About
 Application utilizing the MVC paradigm to build a website that allows users to post items for sale.
+![U-Post-It-screenshot](https://user-images.githubusercontent.com/94558036/162630925-aa4f7d16-b087-4feb-9821-6bbd5ee4c67e.png)
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-##![U-Post-It-screenshot](https://user-images.githubusercontent.com/94558036/162630925-aa4f7d16-b087-4feb-9821-6bbd5ee4c67e.png)
 
 ## Built With 
 * JavaScript
